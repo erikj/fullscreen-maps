@@ -1,7 +1,7 @@
 {
   "name": "Fullscreen Maps",
   "description": "Fullscreen Maps for Chrome",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "app": {
     "launch": {
       "local_path": "index.html"
