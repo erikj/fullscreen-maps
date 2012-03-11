@@ -1,4 +1,4 @@
-initialize = (map_div_name) ->
+loadMap = (map_div_name) ->
   myOptions =
     zoom: 12
     mapTypeId: google.maps.MapTypeId.HYBRID

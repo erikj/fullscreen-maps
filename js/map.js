@@ -1,6 +1,6 @@
-var initialize;
+var loadMap;
 
-initialize = function(map_div_name) {
+loadMap = function(map_div_name) {
   var map, map_div, myOptions;
   myOptions = {
     zoom: 12,
