@@ -38,6 +38,7 @@ search = (address) ->
 
   return location
 
+# geolocate(): attempt to center map by calling browser geolocation
 geolocate = () ->
   newyork = new google.maps.LatLng(40.69847032728747, -73.9514422416687)
   handleNoGeolocation = () ->
