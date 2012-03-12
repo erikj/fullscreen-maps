@@ -11,8 +11,10 @@
     <div id='body_div'></div>
     <div id='map'></div>
     <div id='search_box'>
-      <input id='search_address' type='text' value='' />
-      <button onclick='search();'>Search</button>
+      <form onsubmit='search();'>
+        <input id='search_address' type='text' />
+        <input type='submit' value='Search' />
+      </form>
     </div>
   </body>
 </html>
