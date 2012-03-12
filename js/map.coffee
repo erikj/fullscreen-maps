@@ -1,5 +1,8 @@
 map ={}
 
+# loadMap(map_div_name): initialize a google map on the map DOM element
+# input: String, name of map div DOM element
+
 loadMap = (map_div_name) ->
   myOptions =
     zoom: 12
