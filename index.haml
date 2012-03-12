@@ -10,4 +10,8 @@
     %link{ :rel=>"stylesheet", :href=>"css/map.css", :type=>"text/css" }
 
   %body{ :onload=>"loadMap('map')" }
+    %div{:id=>"body_div"}
     %div{:id=>"map"}
+    %div{ :id=>"search_box"}
+      %input{ :type=>"text", :id=>"search_address", :value=>"" }
+      %button{ :onclick=>"search();"} Search

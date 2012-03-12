@@ -1,7 +1,9 @@
-var loadMap;
+var loadMap, map, search;
+
+map = {};
 
 loadMap = function(map_div_name) {
-  var map, myOptions;
+  var myOptions;
   myOptions = {
     zoom: 12,
     mapTypeId: google.maps.MapTypeId.HYBRID,
@@ -19,4 +21,21 @@ loadMap = function(map_div_name) {
     maxZoom: 18
   }));
   return geolocate(map);
+};
+
+search = function() {
+  var geocoder;
+  geocoder = new google.maps.Geocoder;
+  geocoder.geocode({
+    address: document.getElementById("search_address").value
+  }, function(results, status) {
+    var location;
+    if (status === google.maps.GeocoderStatus.OK) {
+      location = results[0].geometry.location;
+      return map.setCenter(location);
+    } else {
+      return alert("Not found: " + status);
+    }
+  });
+  return location;
 };

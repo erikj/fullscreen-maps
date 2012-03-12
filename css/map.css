@@ -1,5 +1,6 @@
 html { height: 100% }
 body { height: 100%; margin: 0px; padding: 0px }
+#body_div { position: relative; }
 #map {
      width:  100%;
      height: 100%;
@@ -7,3 +8,8 @@ body { height: 100%; margin: 0px; padding: 0px }
      background-position: 50% 50%;
      background-repeat:   no-repeat;
      }
+#search_box { position:absolute;
+              top: 4px;
+              left:80px;
+              background-color:#fff;
+}
