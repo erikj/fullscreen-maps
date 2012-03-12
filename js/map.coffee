@@ -21,15 +21,16 @@ loadMap = (map_div_name) ->
 
   geolocate map
 
-# http://code.google.com/apis/maps/documentation/javascript/geocoding.html
-
-search = () ->
+# search(address): search for address, re-center map to first search result
+# input: String, address / city, etc.
+# google geocoding reference:
+# - http://code.google.com/apis/maps/documentation/javascript/geocoding.html
+search = (address) ->
   geocoder = new google.maps.Geocoder
-  geocoder.geocode address: document.getElementById("search_address").value,
+  geocoder.geocode address:address,
     (results, status) ->
       if status is google.maps.GeocoderStatus.OK
         location = results[0].geometry.location
-        # alert location
         # TODO: add marker
         map.setCenter location
       else

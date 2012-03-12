@@ -11,6 +11,6 @@
     %div{:id=>"body_div"}
     %div{:id=>"map"}
     %div{ :id=>"search_box"}
-      %form{ :onsubmit=>'search();' }
+      %form{ :onsubmit=>'search(document.getElementById("search_address").value);' }
         %input{ :type=>"text", :id=>"search_address" }
         %input{ :type=>"submit", :value=>"Search" }

@@ -23,11 +23,11 @@ loadMap = function(map_div_name) {
   return geolocate(map);
 };
 
-search = function() {
+search = function(address) {
   var geocoder;
   geocoder = new google.maps.Geocoder;
   geocoder.geocode({
-    address: document.getElementById("search_address").value
+    address: address
   }, function(results, status) {
     var location;
     if (status === google.maps.GeocoderStatus.OK) {
