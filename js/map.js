@@ -1,4 +1,4 @@
-var loadMap, map, search;
+var geolocate, loadMap, map, search;
 
 map = {};
 
@@ -38,4 +38,23 @@ search = function() {
     }
   });
   return location;
+};
+
+geolocate = function() {
+  var handleNoGeolocation, newyork;
+  newyork = new google.maps.LatLng(40.69847032728747, -73.9514422416687);
+  handleNoGeolocation = function() {
+    return map.setCenter(newyork);
+  };
+  if (navigator.geolocation) {
+    return navigator.geolocation.getCurrentPosition((function(position) {
+      var initialLocation;
+      initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      return map.setCenter(initialLocation);
+    }), function() {
+      return handleNoGeolocation();
+    });
+  } else {
+    return handleNoGeolocation();
+  }
 };

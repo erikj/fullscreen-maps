@@ -34,3 +34,16 @@ search = () ->
 
   return location
 
+geolocate = () ->
+  newyork = new google.maps.LatLng(40.69847032728747, -73.9514422416687)
+  handleNoGeolocation = () ->
+    map.setCenter newyork
+
+  if navigator.geolocation
+    navigator.geolocation.getCurrentPosition ( (position) ->
+      initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+      map.setCenter initialLocation
+    ), ->
+      handleNoGeolocation()
+  else
+    handleNoGeolocation()
