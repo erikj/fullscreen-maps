@@ -11,5 +11,4 @@ body { height: 100%; margin: 0px; padding: 0px }
 #search_box { position:absolute;
               top: 4px;
               left:80px;
-              background-color:#fff;
 }
