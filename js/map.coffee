@@ -1,9 +1,13 @@
+# compile w/
+# % coffee -c js/map.coffee
+# => js/map.js
+
 map ={}
 
 # loadMap(map_div_name): initialize a google map on the map DOM element
 # input: String, name of map div DOM element
 
-loadMap = (map_div_name) ->
+@loadMap = (map_div_name) ->
   myOptions =
     zoom: 12
     mapTypeId: google.maps.MapTypeId.HYBRID
@@ -25,7 +29,7 @@ loadMap = (map_div_name) ->
 # input: String, address / city, etc.
 # google geocoding reference:
 # - http://code.google.com/apis/maps/documentation/javascript/geocoding.html
-search = (address) ->
+@search = (address) ->
   geocoder = new google.maps.Geocoder
   geocoder.geocode address:address,
     (results, status) ->
