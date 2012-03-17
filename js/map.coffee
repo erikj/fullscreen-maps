@@ -10,7 +10,7 @@ map ={}
 @loadMap = (map_div_name) ->
   myOptions =
     zoom: 12
-    mapTypeId: google.maps.MapTypeId.HYBRID
+    mapTypeId: google.maps.MapTypeId.ROADMAP
     mapTypeControlOptions: { mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.SATELLITE, google.maps.MapTypeId.HYBRID, google.maps.MapTypeId.TERRAIN, 'OSM'] }
 
   map = new google.maps.Map document.getElementById(map_div_name), myOptions
