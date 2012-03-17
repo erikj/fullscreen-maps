@@ -30,10 +30,20 @@
     geocoder.geocode({
       address: address
     }, function(results, status) {
-      var location;
+      var location, marker;
       if (status === google.maps.GeocoderStatus.OK) {
         location = results[0].geometry.location;
-        return map.setCenter(location);
+        map.setCenter(location);
+        marker = new google.maps.Marker({
+          position: location,
+          map: map
+        });
+        return google.maps.event.addListener(marker, 'click', function() {
+          var infoWindow;
+          infoWindow = new google.maps.InfoWindow;
+          infoWindow.setContent(results[0].formatted_address);
+          return infoWindow.open(map, marker);
+        });
       } else {
         return alert("Not found: " + status);
       }

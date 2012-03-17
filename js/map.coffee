@@ -35,8 +35,14 @@ map ={}
     (results, status) ->
       if status is google.maps.GeocoderStatus.OK
         location = results[0].geometry.location
-        # TODO: add marker
         map.setCenter location
+        # add marker
+        marker = new google.maps.Marker { position: location, map: map }
+
+        google.maps.event.addListener marker, 'click', ->
+          infoWindow = new google.maps.InfoWindow
+          infoWindow.setContent results[0].formatted_address
+          infoWindow.open map, marker
       else
         alert "Not found: " + status
 
