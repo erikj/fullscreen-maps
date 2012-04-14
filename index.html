@@ -10,11 +10,16 @@
   <body onload="loadMap('map')">
     <div id='body_div'></div>
     <div id='map'></div>
-    <div id='search_box'>
-      <form action='javascript:void(0);' onsubmit='search(document.getElementById("search_address").value);'>
-        <input id='search_address' type='text' />
-        <input type='submit' value='Search' />
-      </form>
+    <div id='search'>
+      <div id='search_box'>
+        <form action='javascript:void(0);' onsubmit='search(document.getElementById("search_address").value);'>
+          <input id='search_address' type='text' />
+          <input type='submit' value='Search' />
+        </form>
+      </div>
+      <div id='search-results'>
+        results
+      </div>
     </div>
   </body>
 </html>

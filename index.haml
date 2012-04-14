@@ -10,7 +10,10 @@
   %body{ :onload=>"loadMap('map')" }
     %div{:id=>"body_div"}
     %div{:id=>"map"}
-    %div{ :id=>"search_box"}
-      %form{ :onsubmit=>'search(document.getElementById("search_address").value);', :action=>"javascript:void(0);" }
-        %input{ :type=>"text", :id=>"search_address" }
-        %input{ :type=>"submit", :value=>"Search" }
+    #search
+      %div{ :id=>"search_box"}
+        %form{ :onsubmit=>'search(document.getElementById("search_address").value);', :action=>"javascript:void(0);" }
+          %input{ :type=>"text", :id=>"search_address" }
+          %input{ :type=>"submit", :value=>"Search" }
+      #search-results
+        results

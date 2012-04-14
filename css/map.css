@@ -8,8 +8,12 @@ body { height: 100%; margin: 0px; padding: 0px }
   background-position: 50% 50%;
   background-repeat:   no-repeat;
 }
-#search_box {
+#search {
   position: absolute;
   top:      4px;
   left:     80px;
+}
+
+#search-results {
+  display:none;
 }
