@@ -31,9 +31,17 @@ map ={}
 # - http://code.google.com/apis/maps/documentation/javascript/geocoding.html
 @search = (address) ->
   geocoder = new google.maps.Geocoder
+  # TODO: search based on current location, from map center
   geocoder.geocode address:address,
     (results, status) ->
       if status is google.maps.GeocoderStatus.OK
+
+        # TODO:
+        # if results.size > 1
+        #   $('#search-results').show()
+        #   for result in results
+        #     $('#search-results').append("<div>#{result...}</div>")
+
         location = results[0].geometry.location
         map.setCenter location
         # add marker
