@@ -2,12 +2,15 @@
 # % coffee -c js/map.coffee
 # => js/map.js
 
+FSMAP = {} # our library
+@FSMAP = FSMAP # add to global
+
 map ={}
 
 # loadMap(map_div_name): initialize a google map on the map DOM element
 # input: String, name of map div DOM element
 
-@loadMap = (map_div_name) ->
+FSMAP.loadMap = (map_div_name) ->
   myOptions =
     zoom: 12
     mapTypeId: google.maps.MapTypeId.ROADMAP

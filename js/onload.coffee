@@ -1,0 +1,3 @@
+$ ->
+
+  FSMAP.loadMap('map')
